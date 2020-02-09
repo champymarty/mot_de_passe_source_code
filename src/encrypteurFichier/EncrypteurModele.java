@@ -115,7 +115,9 @@ public class EncrypteurModele extends AbstractTableModel {
 
     public String quitter() {
         if (!actionEnCours) {
-            bar.dispose();
+            if (bar != null) {
+                bar.dispose();
+            }
             controleur.quit();
         }
         return action;
